@@ -18,7 +18,7 @@ spec:
         app: welcome-app
     spec:
       containers:
-      - image: quay.io/redhatworkshops/welcome-app:039af8
+      - image: PATCH_ME
         name: welcome-app
         resources: {}
 status: {}
