@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: welcome-app
+  name: welcome-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: welcome-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: welcome-app
+    spec:
+      containers:
+      - image: quay.io/redhatworkshops/welcome-app:039af8
+        name: welcome-app
+        resources: {}
+status: {}
