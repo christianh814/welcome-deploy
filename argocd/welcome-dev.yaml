@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: welcome-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: welcome-dev
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: overlays/dev
+    repoURL: https://github.com/christianh814/welcome-deploy
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  sync:
+    comparedTo:
+      destination:
+        namespace: welcome-dev
+        server: https://kubernetes.default.svc
+      source:
+        path: overlays/dev
+        repoURL: https://github.com/christianh814/welcome-deploy
+        targetRevision: main
