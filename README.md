@@ -15,20 +15,20 @@ Install an instance
 until oc apply -k https://github.com/RedHatWorkshops/argocd-getting-started/resources/manifests/argocd-instance ; do sleep 3 ; done
 ```
 
-# Install Sealed Secrets
-
-Install it using Kustomzie. This installs it in the `sealed-secrets` namespace.
-
-```shell
-oc apply -k https://github.com/christianh814/openshift-cluster-config/manifests/sealed-secrets/base/
-```
-
 # Install Tekton
 
 Install OpenShift Pipelines
 
 ```shell
 oc apply -k https://github.com/christianh814/openshift-cluster-config/manifests/pipelines/base/
+```
+
+# Install Sealed Secrets
+
+Install it using Kustomzie. This installs it in the `sealed-secrets` namespace.
+
+```shell
+oc apply -k https://github.com/christianh814/openshift-cluster-config/manifests/sealed-secrets/base/
 ```
 
 # Install this Repo
