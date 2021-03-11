@@ -12,7 +12,7 @@ oc apply -k https://github.com/RedHatWorkshops/argocd-getting-started/resources/
 Install an instance
 
 ```shell
-until oc apply -k https://github.com/RedHatWorkshops/argocd-getting-started/resources/manifests/argocd-instance do ; sleep 3 ; done
+until oc apply -k https://github.com/RedHatWorkshops/argocd-getting-started/resources/manifests/argocd-instance ; do sleep 3 ; done
 ```
 
 # Install Sealed Secrets
