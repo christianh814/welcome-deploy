@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name:  welcome-app-pipelinerun-
+  name:  welcome-app-pipelinerun-init
   generateName:  welcome-app-pipelinerun-
 spec:
   serviceAccountName: welcome-pipeline-sa
