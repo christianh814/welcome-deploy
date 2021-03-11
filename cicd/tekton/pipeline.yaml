@@ -144,7 +144,7 @@ spec:
         value: |
           yq w -i overlays/$(params.PROD_OVERLAY_DIR)/deployment.yaml [0].value $(tasks.set-image-tag.results.tag)
     runAfter:
-      - patch-dev
+      - commit-to-dev
     workspaces:
       - name: source
         workspace: welcome-app-ws1
@@ -164,7 +164,6 @@ spec:
       name: git-cli
       kind: ClusterTask
     runAfter:
-      - patch-prod
       - commit-to-dev
     workspaces:
     - name: source
