@@ -23,6 +23,14 @@ Install it using Kustomzie. This installs it in the `sealed-secrets` namespace.
 oc apply -k https://github.com/christianh814/openshift-cluster-config/manifests/sealed-secrets/base/
 ```
 
+# Install Tekton
+
+Install OpenShift Pipelines
+
+```shell
+oc apply -k https://github.com/christianh814/openshift-cluster-config/manifests/pipelines/base/
+```
+
 # Install this Repo
 
 To install this repo, run the following
