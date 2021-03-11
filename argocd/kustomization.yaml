@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: argocd
 resources:
 - welcome-dev.yaml
+- welcome-prod.yaml
