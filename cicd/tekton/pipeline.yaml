@@ -164,7 +164,7 @@ spec:
       name: git-cli
       kind: ClusterTask
     runAfter:
-      - commit-to-dev
+      - patch-prod
     workspaces:
     - name: source
       workspace: welcome-app-ws1
