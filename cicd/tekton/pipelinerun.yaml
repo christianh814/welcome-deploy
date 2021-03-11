@@ -1,8 +1,11 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name:  welcome-app-pipelinerun-init
   generateName:  welcome-app-pipelinerun-
+  name:  welcome-app-pipelinerun
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
 spec:
   serviceAccountName: welcome-pipeline-sa
   pipelineRef:
