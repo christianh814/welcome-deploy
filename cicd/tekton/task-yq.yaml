@@ -2,6 +2,8 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: yq
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   params:
     - name: commands

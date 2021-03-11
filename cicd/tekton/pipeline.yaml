@@ -2,6 +2,8 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: welcome-app-pipeline
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   params:
   - name: GIT_REPO
