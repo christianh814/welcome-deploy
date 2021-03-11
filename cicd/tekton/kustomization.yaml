@@ -3,10 +3,10 @@ kind: Kustomization
 namespace: welcome-pipeline
 resources:
 - namespace.yaml
-- ght.yaml
-- gs.yaml
-- qc.yaml
 - sa.yaml
+- ght-sealed.yaml
+- gs-sealed.yaml
+- qc-sealed.yaml
 - task-create-pr.yaml
 - task-set-tag.yaml
 - task-yq.yaml
