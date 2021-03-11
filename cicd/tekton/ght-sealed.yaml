@@ -1,0 +1,15 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: githubtoken
+  namespace: welcome-pipeline
+spec:
+  encryptedData:
+    token: AgCLqu1TORabq0foon9wlUuF5RtgY0J67Bq0sgw76RXTEkfLabOHdEZ3/YY2VEKJILoy0tMrdzh3se96YtOjDlu2M2SRg2bpKYMBnOBI3u7FG/2AFq76Zu/GEdeirJCwAAJ2zVGRbo89QWYq1Gt5i/nb+/rtNrq6JlUKL+mZN0rE9vrdZJ21HTzbhITdnnKpkhvVYZj0F4OnX5ZNJFWKE9A78TiejRrfMNmYTd9UbYRXT0Shs5ctpp/np1O2q2JWsyzHKx7A92aOGtTnW33lDocLwxn9PbCFD5L4QSFYL1OM6lWhHPlGQxJxfeUaXksN59hnVt1rDF2LmYI2ubZtx9QgaVQFgHVilCQdODO2cMIgNvcH+aPsPYG/tba4eCnKL1bARPCUT8FsjXKCO0iyfbPU7irqcqoKYmT1GGV3GdXhFDv7Z0zyAMA6pWkqBYu4B/BFS4j8BM5omCAXaOmaHOur9dMWkZ4yrGv505NuJpvlOYb963pnhU7YtvwcOWS9cz8ROAt/RONUKn+m2pwtgn0MpEmNafkVnnJ/5yvSzDv8UwFhUFOhfLaaCiLdOhKEeVjudRowmNUH4tUmr50wcVcU6EfaBWGTIwAmau1zbvbtMVKp/gUI/sMlxlFVnHRvhQ8sZIEHUB8/8W8mJ/RoYtRc99ZuqF/cMejxQ/Ershvnn+wU0mUOLbdLxXdp/pCrf6WerdDtaMRdaklDaScIwZShZ+dCkwWqNA9kersnbv9Knsq/GOAsirux
+  template:
+    metadata:
+      creationTimestamp: null
+      name: githubtoken
+      namespace: welcome-pipeline
+

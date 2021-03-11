@@ -1,0 +1,30 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: set-tag
+spec:
+  params:
+    - name: commit
+      type: string
+    - name: url
+      type: string
+    - name: imagestream
+      type: string
+  results:
+    - description: The hash that will be used for the image tag
+      name: tag
+    - description: Tag ID to identify this run
+      name: tagref
+  steps:
+    - name: setting-tag-from-hash
+      image: registry.access.redhat.com/ubi8/ubi
+      script: |
+        #!/usr/bin/env /bin/bash
+        tag=$(echo -n "$(params.commit)" | cut -b 35-)
+        is=$(params.imagestream)
+        echo "Setting commit $(params.commit) for $(params.url) as imagetag ${is}:${tag}"
+        echo -n ${is}:${tag} >"$(results.tag.path)"
+        echo -n ${tag} >"$(results.tagref.path)"
+  workspaces:
+    - description: The hash will be stored in this backing store
+      name: tagput

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: welcome-pipeline-sa
+secrets:
+  - name: quaycred
+  - name: gitsshkey
