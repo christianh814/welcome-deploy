@@ -28,5 +28,5 @@ oc apply -k https://github.com/christianh814/openshift-cluster-config/manifests/
 To install this repo, run the following
 
 ```shell
-oc apply -k https://github.com/christianh814/welcome-deploy/cicd
+oc apply -k https://github.com/christianh814/welcome-deploy/cicd/argocd
 ```
