@@ -126,6 +126,7 @@ spec:
         cat ~/.gitconfig
         ls -l ~/.ssh
         cat ~/.ssh/id_gitsshkey
+        cat ~/.ssh/config
         env |grep -i GIT
         git add -A .
         git commit -am "Run $(tasks.set-image-tag.results.tagref): Updating image to $(tasks.set-image-tag.results.tag) on $(params.DEV_OVERLAY_DIR)"
