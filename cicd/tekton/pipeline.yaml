@@ -68,6 +68,8 @@ spec:
         value: $(workspaces.source.path)
       - name: STORAGE_DRIVER
         value: overlay
+      - name: BUILDER_IMAGE
+        value: quay.io/buildah/stable:v1.17.0
     taskRef:
       name: buildah
       kind: ClusterTask
