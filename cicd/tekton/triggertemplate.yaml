@@ -18,6 +18,9 @@ spec:
     kind: PipelineRun
     metadata:
       name:  welcome-app-pipelinerun-$(uid)
+      annotations:
+        argocd.argoproj.io/compare-options: IgnoreExtraneous
+        argocd.argoproj.io/sync-options: Prune=false
     spec:
       serviceAccountName: pipeline
       pipelineRef:
