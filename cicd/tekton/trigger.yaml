@@ -1,0 +1,12 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: build-trigger
+  annotations:
+    argocd.argoproj.io/sync-wave: "6"
+spec:
+  serviceAccountName: pipeline
+  bindings:
+    - ref: build-trigger
+  template:
+     name: build-trigger

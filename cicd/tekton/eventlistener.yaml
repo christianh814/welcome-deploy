@@ -1,0 +1,10 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: build-listener
+  annotations:
+    argocd.argoproj.io/sync-wave: "6"
+spec:
+  serviceAccountName: pipeline
+  triggers:
+    - triggerRef: build-trigger

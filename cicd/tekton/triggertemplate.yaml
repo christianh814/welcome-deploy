@@ -1,0 +1,53 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: build-trigger
+  annotations:
+    argocd.argoproj.io/sync-wave: "6"
+spec:
+  params:
+  - name: git-repo-url
+    description: The git repository url
+  - name: git-revision
+    description: The git revision
+    default: master
+  - name: git-repo-name
+    description: The name of the deployment to be created / patched
+  resourcetemplates:
+  - apiVersion: tekton.dev/v1beta1
+    kind: PipelineRun
+    metadata:
+      generateName:  welcome-app-pipelinerun-
+      name:  welcome-app-pipelinerun
+    spec:
+      serviceAccountName: welcome-pipeline-sa
+      pipelineRef:
+        name: welcome-app-pipeline
+      params:
+        - name: GIT_REPO
+          value: git@github.com:christianh814/welcome-app.git
+        - name: GIT_REF
+          value: master
+        - name: IMAGE_DEST
+          value: quay.io/redhatworkshops/welcome-app
+        - name: SRC_DOCKERFILE
+          value: Containerfile
+        - name: DEPLOY_REPO
+          value: git@github.com:christianh814/welcome-deploy.git
+        - name: DEPLOY_REF
+          value: main
+        - name: DEV_OVERLAY_DIR
+          value: dev
+        - name: PROD_OVERLAY_DIR
+          value: prod
+      workspaces:
+        - name: welcome-app-ws1
+          volumeClaimTemplate:
+            spec:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 1Gi
+        - name: scratch
+          emptyDir: {}
