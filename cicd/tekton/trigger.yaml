@@ -8,5 +8,5 @@ spec:
   serviceAccountName: pipeline
   bindings:
     - ref: build-trigger
-  template:
-    name: build-trigger
+  template: 
+     ref: build-trigger
