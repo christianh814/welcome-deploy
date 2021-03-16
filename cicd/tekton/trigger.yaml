@@ -9,4 +9,4 @@ spec:
   bindings:
     - ref: build-trigger
   template:
-     name: build-trigger
+     ref: build-trigger
