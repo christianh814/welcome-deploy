@@ -10,7 +10,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "6"
 spec:
   port:
-    targetPort: http-listener
+    targetPort: listener
   to:
     kind: Service
     name: el-build-listener
