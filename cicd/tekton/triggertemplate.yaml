@@ -19,7 +19,7 @@ spec:
     metadata:
       name:  welcome-app-pipelinerun-$(uid)
     spec:
-      serviceAccountName: welcome-pipeline-sa
+      serviceAccountName: pipeline
       pipelineRef:
         name: welcome-app-pipeline
       params:

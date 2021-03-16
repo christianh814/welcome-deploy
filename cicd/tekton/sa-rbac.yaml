@@ -12,5 +12,5 @@ roleRef:
   name: admin
 subjects:
 - kind: ServiceAccount
-  name: welcome-pipeline-sa
+  name: pipeline
   namespace: welcome-pipeline
