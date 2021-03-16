@@ -159,7 +159,7 @@ spec:
         git checkout -b $(tasks.set-image-tag.results.tagref)
         git add -A .
         git commit -am "Run $(tasks.set-image-tag.results.tagref): Updating image to $(tasks.set-image-tag.results.tag) on $(params.PROD_OVERLAY_DIR)"
-        GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push origin HEAD:$(tasks.set-image-tag.results.tagref)
+        GIT_SSH_COMMAND="ssh -i /tekton/home/.ssh/id_gitsshkey -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push origin HEAD:$(tasks.set-image-tag.results.tagref)
     taskRef:
       name: git-cli
       kind: ClusterTask
