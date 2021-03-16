@@ -66,6 +66,8 @@ spec:
         value: $(workspaces.source.path)/$(params.SRC_DOCKERFILE)
       - name: CONTEXT
         value: $(workspaces.source.path)
+      - name: STORAGE_DRIVER
+        value: overlay
     taskRef:
       name: buildah
       kind: ClusterTask
