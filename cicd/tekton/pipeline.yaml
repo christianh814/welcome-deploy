@@ -125,7 +125,7 @@ spec:
       value: |
         git add -A .
         git commit -am "Run $(tasks.set-image-tag.results.tagref): Updating image to $(tasks.set-image-tag.results.tag) on $(params.DEV_OVERLAY_DIR)"
-        GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push origin main
+        GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push origin HEAD:main
     taskRef:
       name: git-cli
       kind: ClusterTask
