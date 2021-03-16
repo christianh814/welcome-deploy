@@ -11,8 +11,9 @@ spec:
     .dockerconfigjson: AgCgnpdB+sqbp30MB9VtSeJ/vPaF62CPQXc4pbj/m/A+QHNvkOjUyCH6AZcN5x5v9/tdJJntAsnSc4+gbrB0NqwtlyqcK340qX3xKNchq2OJkj5xsPbIXrDAwTR+oivTbTQA3QXgWuNMfUeX09N04zRUGg2ihqz/0TKmVrmoruPyxYwhr+jNchbOkxWn/jO21MTtJjThIV81cU6SjtXmNoN8bPcN+sIAQXwByLFnFvZ5tllPBT/jTkbN15u7NuYtXyUeyRbdoruJEHidcQgnWyjDzmww56ppV4a5HYzVwe2KZxgOfPcYw37FH/5zI4xOqME0ZNQY/k/nr+6t90hp1BKHcbCbDJNjXujwQcVB/DuwXeABosjusTVQgjCjLywNbWm0rsLmcYKTWCkxMQAZlSp99estLIhE/v9V5bkScurOzbQOUX0vQ+KJkzeE+JMipFOOuObgbG3iVW9K69RVZxa5aT5Lyczkpj8GusGOeWR5U5FpziD8atGsTAnz3+ue9aBEfTGp4qvhwdS1FGCNlgnaAy+EJfrOendYyK3NJnXACVtg2SzkGmeVkAYGs8JuJhFeYely/BxOaLR0LrhjviKXkMAfFTk/QmqTqZyo6coGnM1n7GD32u0dHiRlUm1E9UbtEt7AOopwKuu77sqMfE0Z4J10YWzqx6SaAnvDBhsrrWx+W0mtyb3E2lMorbrv9Q5TAfLZdm66mWxj/7iYJRWRHdQBWxJouItGPEP6Sd7kiQLdr3435PZ4LgK+WrdDwPTHemrd0MHp0vqcusTLal1VqbE3xf3wEAFU9KoDb2OwlsZ0QRZMTEZttZYTzCzcsvukEiol79AqSIXwAHgJHJDCaSVYBN5EqWUm9EH0XzQ1XJS9TGANLF+83cb0bxU6+pvPvrjmaCaj/0fIVC/CUPTi
   template:
     metadata:
+      annotations:
+        tekton.dev/docker-0: https://quay.io
       creationTimestamp: null
       name: quaycred
       namespace: welcome-pipeline
     type: kubernetes.io/dockerconfigjson
-

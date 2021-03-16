@@ -22,7 +22,7 @@ spec:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
         argocd.argoproj.io/sync-options: Prune=false
     spec:
-      serviceAccountName: welcome-pipeline-sa
+      serviceAccountName: pipeline
       pipelineRef:
         name: welcome-app-pipeline
       params:

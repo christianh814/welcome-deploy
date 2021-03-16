@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
 spec:
-  serviceAccountName: welcome-pipeline-sa
+  serviceAccountName: pipeline
   bindings:
     - ref: build-trigger
   template:
