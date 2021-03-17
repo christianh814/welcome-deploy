@@ -1,3 +1,3 @@
 - op: replace
   path: /spec/template/spec/containers/0/image
-  value: quay.io/redhatworkshops/welcome-app:b11276
+  value: quay.io/redhatworkshops/welcome-app:418e89
