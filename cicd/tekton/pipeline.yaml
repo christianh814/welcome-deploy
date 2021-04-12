@@ -107,7 +107,7 @@ spec:
       name: kustomize
     params:
       - name: imagestream
-        value: $(tasks.clone-repo.results.commit)
+        value: $(tasks.set-image-tag.results.tag)
       - name: overlaypath
         value: overlays/$(params.DEV_OVERLAY_DIR)
     runAfter:
@@ -142,7 +142,7 @@ spec:
       name: kustomize
     params:
       - name: imagestream
-        value: $(tasks.clone-repo.results.commit)
+        value: $(tasks.set-image-tag.results.tag)
       - name: overlaypath
         value: overlays/$(params.PROD_OVERLAY_DIR)
     runAfter:
