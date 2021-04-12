@@ -104,11 +104,12 @@ spec:
       workspace: welcome-app-ws1
   - name: patch-dev
     taskRef:
-      name: yq
+      name: kustomize
     params:
-      - name: commands
-        value: |
-          yq w -i overlays/$(params.DEV_OVERLAY_DIR)/deployment.yaml [0].value $(tasks.set-image-tag.results.tag)
+      - name: imagestream
+        value: $(tasks.clone-repo.results.commit)
+      - name: overlaypath
+        value: overlays/$(params.DEV_OVERLAY_DIR)
     runAfter:
       - clone-deploy-repo
       - tag-to-latest
@@ -138,11 +139,12 @@ spec:
       workspace: scratch
   - name: patch-prod
     taskRef:
-      name: yq
+      name: kustomize
     params:
-      - name: commands
-        value: |
-          yq w -i overlays/$(params.PROD_OVERLAY_DIR)/deployment.yaml [0].value $(tasks.set-image-tag.results.tag)
+      - name: imagestream
+        value: $(tasks.clone-repo.results.commit)
+      - name: overlaypath
+        value: overlays/$(params.PROD_OVERLAY_DIR)
     runAfter:
       - commit-to-dev
     workspaces:
