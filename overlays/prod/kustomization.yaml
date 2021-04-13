@@ -5,9 +5,12 @@ resources:
 - ../../base/
 - namespace.yaml
 patchesJson6902:
-  - target:
-      version: v1
-      group: apps
-      kind: Deployment
-      name: welcome-app
-    path: deployment.yaml
+- path: deployment.yaml
+  target:
+    group: apps
+    kind: Deployment
+    name: welcome-app
+    version: v1
+images:
+- name: quay.io/redhatworkshops/welcome-app
+  newTag: e05bb6
