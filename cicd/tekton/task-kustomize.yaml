@@ -19,7 +19,7 @@ spec:
       script: |
         #!/usr/bin/env /bin/bash
         echo "Running: kustomize edit set image $(params.imagestream)"
-        ls -1d $(params.overlaypath)
+        ls -ld $(params.overlaypath)
         id
         cd $(params.overlaypath)
         kustomize edit set image $(params.imagestream)
