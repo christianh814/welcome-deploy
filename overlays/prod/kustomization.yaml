@@ -13,4 +13,4 @@ patchesJson6902:
     version: v1
 images:
 - name: quay.io/redhatworkshops/welcome-app
-  newTag: c9996c
+  newTag: 4806b9
