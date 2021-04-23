@@ -17,7 +17,7 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      generateName:  welcome-app-pipelinerun-
+      generateName:  welcome-app-pipelinerun-$(uid)
       annotations:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
         argocd.argoproj.io/sync-options: Prune=false
